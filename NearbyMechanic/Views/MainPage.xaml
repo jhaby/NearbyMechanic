@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:NearbyMechanic.ViewModels"
+             Title="Nearby mechanic"
+             x:Name="Mpage"
+             x:Class="NearbyMechanic.Views.MainPage">
+    <ContentPage.BindingContext>
+        <viewmodels:MainPageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="Fill">
+            <StackLayout HorizontalOptions="FillAndExpand" Padding="0,0,0,30">
+                <Label Text="My Profile" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="Large" />
+                <Frame CornerRadius="100" 
+                       HeightRequest="150"
+                       WidthRequest="150"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Padding="0"
+                       Margin="30"
+                       IsClippedToBounds="True">
+                    <Image Source="{Binding Source={x:Reference Mpage}, Path=BindingContext.UserData.PhotoUrl}" 
+                           WidthRequest="150"
+                           HeightRequest="150"
+                           Aspect="AspectFill"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ImageTappedCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+
+                <Button CornerRadius="10"
+                        Text="{Binding ListLabel}"
+                        BorderColor="Black" BorderWidth="1"
+                        Command="{Binding UsersListCommand}"
+                        BackgroundColor="#E9A500" Margin="30,10,30,10" />
+                
+                <Button CornerRadius="20" BackgroundColor="White" 
+                                TextColor="Black" 
+                        IsVisible="{Binding Source={x:Reference Mpage}, Path=BindingContext.UserData.IsMechanic}"
+                                Text="Set location"
+                                BorderColor="Black"  Margin="30,5,30,10"
+                                Command="{Binding SetLocationCommand}"
+                                BorderWidth="1" />
+
+                <Button CornerRadius="20" BackgroundColor="White" 
+                                TextColor="Black" 
+                        IsVisible="{Binding Source={x:Reference Mpage}, Path=BindingContext.UserData.IsMechanic}"
+                                Text="Contact supplier"
+                                BorderColor="Black"  Margin="30,5,30,10"
+                                Command="{Binding ViewSuppliersCommand}"
+                                BorderWidth="1" />
+
+                <Frame Margin="20,10,20,5">
+                    <StackLayout HorizontalOptions="Start">
+                        <Label Text="Biodata" FontAttributes="Bold" FontSize="20" />
+                        <Label Text="{Binding Source={x:Reference Mpage}, Path=BindingContext.UserData.Fullname, StringFormat='Name: {0}', FallbackValue='Fullname'}"/>
+                        <Label Text="{Binding Source={x:Reference Mpage}, Path=BindingContext.UserData.Phone, StringFormat='Phone: {0}', FallbackValue='Phone'}" />
+                        <Label Text="{Binding Source={x:Reference Mpage}, Path=BindingContext.UserData.Email, StringFormat='Email: {0}', FallbackValue='Email'}" />
+                        <Label Text="{Binding Source={x:Reference Mpage}, Path=BindingContext.UserData.Address, StringFormat='Address: {0}', FallbackValue='Address'}" />
+                        <Label Text="Set location" FontSize="Small" />
+                        <Label Text="{Binding Source={x:Reference Mpage}, Path=BindingContext.UserData.Latitude, StringFormat='Latitude: {0}', FallbackValue='Address'}" />
+                        <Label Text="{Binding Source={x:Reference Mpage}, Path=BindingContext.UserData.Address, StringFormat='Longitude: {0}', FallbackValue='Address'}" />
+                    </StackLayout>
+                </Frame>
+                <Frame Margin="20,5,20,5" IsVisible="{Binding Source={x:Reference Mpage}, Path=BindingContext.UserData.IsDriver}">
+                    <StackLayout>
+                        <Label Text="Vehicle details" FontAttributes="Bold" FontSize="20" />
+                        <Label Text="{Binding Source={x:Reference Mpage}, Path=BindingContext.UserData.CarMake, StringFormat='Make: {0}', FallbackValue='Make'}"/>
+                        <Label Text="{Binding Source={x:Reference Mpage}, Path=BindingContext.UserData.CarModel, StringFormat='Model: {0}', FallbackValue='Car model'}" />
+                        <Label Text="{Binding Source={x:Reference Mpage}, Path=BindingContext.UserData.CarPlateNo, StringFormat='Number: {0}', FallbackValue='Plate no'}" />
+
+                    </StackLayout>
+                </Frame>
+
+                <Frame Margin="20,5,20,5" IsVisible="{Binding Source={x:Reference Mpage}, Path=BindingContext.UserData.IsMechanic}">
+                    <StackLayout>
+                        <Label Text="Skills" FontAttributes="Bold" FontSize="20" />
+                        <ListView IsPullToRefreshEnabled="False"
+                                  SeparatorVisibility="Default"
+                                  HeightRequest="200"
+                                  SelectionMode="None"
+                                  ItemsSource="{Binding Source={x:Reference Mpage}, Path=BindingContext.UserData.Skills}"/>
+                        <!--<Button CornerRadius="20" BackgroundColor="White" 
+                                TextColor="Black" 
+                                Text="Add skill"
+                                BorderColor="Black"
+                                Command="{Binding AddSkillCommand}"
+                                BorderWidth="1"
+                                HorizontalOptions="CenterAndExpand" />-->
+                        
+
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

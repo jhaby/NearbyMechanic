@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:NearbyMechanic.ViewModels"
+             Title="See available"
+             x:Name="list"
+             x:Class="NearbyMechanic.Views.UsersListPage">
+    <ContentPage.BindingContext>
+        <viewmodels:UsersListViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar Placeholder="Search by name" />
+            <ListView VerticalOptions="Fill" IsPullToRefreshEnabled="True" IsRefreshing="{Binding IsBusy}" HasUnevenRows="True"
+                      SelectionMode="None" ItemTapped="ListView_ItemTapped" IsVisible="{Binding Source={x:Reference list}, Path=BindingContext.CurrentUser.IsDriver}"
+                      RefreshCommand="{Binding Refreshing}" SeparatorVisibility="None" ItemsSource="{Binding Users}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Margin="0" Padding="0" HeightRequest="70">
+                                <Frame CornerRadius="2" Margin="5,0,5,7" Padding="0">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto" />
+                                            <RowDefinition Height="auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <Image Grid.RowSpan="2" HeightRequest="50" Source="{Binding PhotoUrl}" />
+                                        <Label Text="{Binding Fullname}" FontAttributes="Bold" FontSize="Small"
+                                           Grid.Column="1" />
+                                        <Label Text="{Binding Phone}" FontSize="Small" Grid.Column="1"
+                                           Grid.Row="1" />
+                                        <Label Text="{Binding Progress, StringFormat='Status: {0}'}" FontSize="Small" Grid.Column="1"
+                                               Margin="0,-10,0,0"
+                                           Grid.Row="2" />
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView VerticalOptions="Fill" IsPullToRefreshEnabled="True" IsRefreshing="{Binding IsBusy}" HasUnevenRows="True"
+                      SelectionMode="None" ItemTapped="Job_ItemTapped" IsVisible="{Binding Source={x:Reference list}, Path=BindingContext.CurrentUser.IsMechanic}"
+                      RefreshCommand="{Binding Refreshing}" SeparatorVisibility="None" ItemsSource="{Binding Users}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Margin="0" Padding="0" HeightRequest="70">
+                                <Frame CornerRadius="2" Margin="5,0,5,7" Padding="0">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto" />
+                                            <RowDefinition Height="auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="{Binding PhotoUrl}" 
+                                                   HeightRequest="50"
+                                               WidthRequest="50"
+                                                   Aspect="AspectFill" Grid.RowSpan="3"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center" />
+                                        
+                                        <Label Text="{Binding Fullname}" FontAttributes="Bold" FontSize="Medium"
+                                               
+                                           Grid.Column="1" />
+                                        <Label Text="{Binding Phone}" FontSize="Small" Grid.Column="1"
+                                               Margin="0,-10,0,0"
+                                           Grid.Row="1" />
+                                        <Label Text="{Binding Progress, StringFormat='Status: {0}'}" FontSize="Small" Grid.Column="1"
+                                               Margin="0,-10,0,0"
+                                               Grid.Row="2" />
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

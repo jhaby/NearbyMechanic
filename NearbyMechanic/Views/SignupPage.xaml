@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:NearbyMechanic.ViewModels"
+             x:Class="NearbyMechanic.Views.SignupPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <viewmodels:SignupViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Frame BackgroundColor="#0059BE" VerticalOptions="Center">
+                <StackLayout
+                             VerticalOptions="Center"
+                        Margin="0,20,0,20"
+                             BackgroundColor="#0059BE"
+                             HorizontalOptions="Center">
+                    <Label Text="Nearby Mechanic" TextColor="White" HorizontalTextAlignment="Center" FontSize="24" />
+                    <Label Text="Create account" HorizontalTextAlignment="Center" TextColor="White" FontSize="Medium"/>
+                </StackLayout>
+            </Frame>
+            <ScrollView VerticalOptions="Fill" Grid.Row="1">
+                <StackLayout Padding="20">
+                    <Entry Placeholder="Fullname" Text="{Binding Fullname, Mode=TwoWay}" Margin="10,10,10,0" />
+                    <Entry Placeholder="Phone" Text="{Binding Phone, Mode=TwoWay}" Keyboard="Telephone" Margin="10,2,10,0" />
+                    <Entry Placeholder="Email" Text="{Binding Email, Mode=TwoWay}" Keyboard="Email" Margin="10,2,10,0" />
+                    <Entry Placeholder="Address" Text="{Binding Address, Mode=TwoWay}" Keyboard="Plain" Margin="10,2,10,0" />
+                    <Entry Placeholder="Car make" Text="{Binding CarMake, Mode=TwoWay}" Margin="10,2,10,0" />
+                    <Entry Placeholder="Car model" Text="{Binding CarModel, Mode=TwoWay}" Margin="10,2,10,0" />
+                    <Entry Placeholder="Plate number" Text="{Binding PlateNumber, Mode=TwoWay}" Margin="10,2,10,0" />
+                    
+                    <Entry Placeholder="Password" Text="{Binding Password, Mode=TwoWay}" IsPassword="True" Keyboard="Text" Margin="10,10,10,20" />
+                    <Button Text="Signup" 
+                            TextColor="White"
+                            CornerRadius="5"
+                           BackgroundColor="DarkGreen" 
+                           Command="{Binding SignupCommand}"/>
+
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

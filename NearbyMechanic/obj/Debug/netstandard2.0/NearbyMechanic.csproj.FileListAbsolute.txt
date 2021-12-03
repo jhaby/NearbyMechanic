@@ -1,0 +1,38 @@
+G:\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\NearbyMechanic.csproj.AssemblyReference.cache
+G:\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\App.xaml.g.cs
+G:\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
+G:\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+G:\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+G:\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\Views\SignupPage.xaml.g.cs
+G:\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\Views\UsersListPage.xaml.g.cs
+G:\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\NearbyMechanic.AssemblyInfoInputs.cache
+G:\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\NearbyMechanic.AssemblyInfo.cs
+G:\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\NearbyMechanic.csproj.CoreCompileInputs.cache
+G:\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\NearbyMechanic.dll
+G:\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\ref\NearbyMechanic.dll
+G:\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\NearbyMechanic.pdb
+G:\NearbyMechanic\NearbyMechanic\bin\Debug\netstandard2.0\NearbyMechanic.deps.json
+G:\NearbyMechanic\NearbyMechanic\bin\Debug\netstandard2.0\NearbyMechanic.dll
+G:\NearbyMechanic\NearbyMechanic\bin\Debug\netstandard2.0\ref\NearbyMechanic.dll
+G:\NearbyMechanic\NearbyMechanic\bin\Debug\netstandard2.0\NearbyMechanic.pdb
+G:\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\bin\Debug\netstandard2.0\NearbyMechanic.deps.json
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\bin\Debug\netstandard2.0\NearbyMechanic.dll
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\bin\Debug\netstandard2.0\ref\NearbyMechanic.dll
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\bin\Debug\netstandard2.0\NearbyMechanic.pdb
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\NearbyMechanic.csproj.AssemblyReference.cache
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\Views\LoadingDialog.xaml.g.cs
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\Views\SignupPage.xaml.g.cs
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\Views\UsersListPage.xaml.g.cs
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\NearbyMechanic.AssemblyInfoInputs.cache
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\NearbyMechanic.AssemblyInfo.cs
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\NearbyMechanic.csproj.CoreCompileInputs.cache
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\NearbyMechanic.dll
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\ref\NearbyMechanic.dll
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\NearbyMechanic.pdb
+C:\Users\Dr. ALOYSIUS\source\repos\NearbyMechanic\NearbyMechanic\obj\Debug\netstandard2.0\Views\SupplierPage.xaml.g.cs
