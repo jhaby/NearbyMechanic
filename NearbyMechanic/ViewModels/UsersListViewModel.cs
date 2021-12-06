@@ -72,7 +72,7 @@ namespace NearbyMechanic.ViewModels
             {
                 try
                 {
-                    var httpClient = await HttpRequests._client.GetAsync(HttpRequests.BaseUri + "/fetch.php");
+                    var httpClient = await HttpRequests._client.GetAsync(HttpRequests.BaseUri + "/fetch.php?q=mechanics");
                     httpClient.EnsureSuccessStatusCode();
                     if (httpClient.IsSuccessStatusCode)
                     {

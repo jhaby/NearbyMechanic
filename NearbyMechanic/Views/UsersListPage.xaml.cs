@@ -53,13 +53,17 @@ namespace NearbyMechanic.Views
             }
             else if(result == "Send Text SMS")
             {
-                await Sms.ComposeAsync();
+                await Sms.ComposeAsync(new SmsMessage
+                {
+                    Body = "Compose request message",
+                    Recipients = new List<string> { item.Phone }
+                });
             }
             else if(result == "Send Request")
             {
                 try
                 {
-                    if (item.Progress.Equals("Pending") || item.Progress.Equals("Responding"))
+                    if (item.Progress == "Progress" || item.Progress == "Responding")
                     {
                         await DisplayAlert("Ongoing", "You already requested a pending service from this mechanic", "OK");
                     }
@@ -69,20 +73,34 @@ namespace NearbyMechanic.Views
                         Location location = await Geolocation.GetLocationAsync(new GeolocationRequest
                         { DesiredAccuracy = GeolocationAccuracy.High, Timeout = TimeSpan.FromSeconds(30) });
 
-                        Jobs job = new Jobs
-                        {
-                            Status = false,
-                            MechanicPhone = item.Phone,
-                            DateOfRequest = DateTime.Now,
-                            ClientPhone = phone,
-                            Progress = "Pending"
-                        };
                         var driver = await firebase.DataStore.GetCurrentUser();
                         driver.Latitude = location.Latitude;
                         driver.Longitude = location.Longitude;
 
                         await firebase.UpdateUser(driver);
-                        await firebase.SubmitRequest(job);
+
+                        var results = await firebase.GetAllJobs();
+                        if (results.Any(ag => ag.MechanicPhone == item.Phone && ag.ClientPhone == phone))
+                        {
+                            var newStatus = results.Find(ag => ag.MechanicPhone == item.Phone && ag.ClientPhone == phone);
+                            newStatus.Status = false;
+                            newStatus.Progress = "Pending";
+
+                            await firebase.UpdateJob(newStatus);
+                        }
+                        else
+                        {
+                            Jobs job = new Jobs
+                            {
+                                Status = false,
+                                MechanicPhone = item.Phone,
+                                DateOfRequest = DateTime.Now,
+                                ClientPhone = phone,
+                                Progress = "Pending"
+                            };
+                            await firebase.SubmitRequest(job);
+                        }
+                        
                     }
                     
                 }

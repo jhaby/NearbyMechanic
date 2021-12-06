@@ -87,7 +87,7 @@ namespace NearbyMechanic.ViewModels
                         }
                         await Shell.Current.DisplayAlert("Denied", err, "OK");
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         await Shell.Current.DisplayAlert("Denied", "User with these credentials doesn't exists", "OK");
                     }
@@ -95,7 +95,8 @@ namespace NearbyMechanic.ViewModels
             }
             else
             {
-                await PopupNavigation.Instance.PushAsync(new LoadingDialog("You have exceeded your three time trial. Please try again later"));
+                await Shell.Current.DisplayAlert("Denied", "You have exceeded your three time trial. Please try again later", "OK");
+                
             }
             count++;
             await PopupNavigation.Instance.PopAllAsync();
